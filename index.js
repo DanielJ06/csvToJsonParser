@@ -14,6 +14,13 @@ app.use(cors())
 const server = http.createServer(app);
 const port = 9000
 
+router.get('/', (req, res) => {
+	const data = {
+		message: "Hi, welcome"
+	}
+	return res.json(data);
+})
+
 router.post('/', upload.single('file'), function (req, res) {
 	const file = req.file.path;
 	csv().fromFile(file).then(jsonObj => {
