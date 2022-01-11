@@ -12,7 +12,7 @@ const app = express();
 const router = new Router();
 app.use(cors())
 const server = http.createServer(app);
-const port = 9000
+const port = process.env.PORT || 9000
 
 router.get('/', (req, res) => {
 	const data = {
